@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch("") { 'pguser' } %>
+  host: <%= ENV.fetch("") { 'localhost' } %>
+  password: <%= ENV.fetch("") { 'ab19hi94' } %>
+
+development:
+  <<: *default
+  database: razaorpayapp_development
+
+test:
+  <<: *default
+  database: razaorpayapp_test
+
+production:
+  <<: *default
+  database: razaorpayapp_production
+  password: <%= ENV['CELEBRATION_BACKEND_DATABASE_PASSWORD'] %>
