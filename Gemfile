@@ -12,6 +12,9 @@ gem 'rails', '~> 5.2.0'
 gem 'bcrypt'
 gem 'jwt'
 
+# payment integration
+gem 'razorpay'
+
 # pagination
 gem 'kaminari'
 
