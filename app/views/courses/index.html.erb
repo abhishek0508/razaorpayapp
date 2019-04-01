@@ -18,32 +18,7 @@
         <td><%= course.topic %></td>
         <td><%= course.description %></td>
         <td><%= course.price %></td>
-        <td>
-        <form action="/orders" method="POST">
-            <!-- Note that the amount is in its subunit value = 599 -->
-    <script
-    src="https://checkout.razorpay.com/v1/checkout.js"
-    data-key="rzp_test_w9PdKrm1aCOScu"
-    data-amount= <%= course.price %> 
-    
-    data-currency="INR" 
-    data-buttontext="Pay with Razorpay"
-    data-name="Merchant Name"
-    data-description="Purchase Description"
-    data-image="https://your-awesome-site.com/your_logo.jpg"
-    data-prefill.name="Abhishek Gorisaria"
-    data-prefill.email="abhishek@gmail.com"
-    data-theme.color="#0d2245"
-    ></script>
-    <input type="hidden" value= <%=course.id%> name="order[course_id]">
-    <input type="hidden" value= '1' name="order[user_id]">
-    <input type="hidden" value= <%=course.price%> name="order[amount]">
-    <input type="hidden" value= nil name="order[date]">
-    <input type="hidden">
-    
-    </form>
-        </td>
-        
+        <td><%= link_to "Pay", courses_path(id: course.id) %></td>
         </tr>
     <% end %>
   </tbody>

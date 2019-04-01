@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.find_by(params[:id])
+    @course = Course.find(params[:id])
   end
 
   private
