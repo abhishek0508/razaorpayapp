@@ -20,6 +20,12 @@ gem 'kaminari'
 
 gem 'active_model_serializers', '~> 0.10.0', require: true
 
+# 
+gem 'jquery-rails'
+
+gem 'turbolinks'
+
+
 # backgroud jobs
 gem 'redis', '~> 4.0'
 gem 'sidekiq'
